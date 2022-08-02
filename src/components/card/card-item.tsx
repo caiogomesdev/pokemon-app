@@ -14,7 +14,7 @@ const CardItem: React.FC<Params> = ({ content }) => {
       <TextCardItem>{content.title}</TextCardItem>
       <CardButtons>
         <Button type="favorite" />
-        <Button type="favorite" />
+        <Button type="info" />
       </CardButtons>
     </Card>
   );

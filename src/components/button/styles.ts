@@ -15,4 +15,7 @@ export const Text = styled.Text`
 
 export const ButtonFavorite = styled.TouchableOpacity``;
 
-export const Image = styled.Image``;
+export const Image = styled.Image`
+  width: 16px;
+  height: 16px;
+`;
