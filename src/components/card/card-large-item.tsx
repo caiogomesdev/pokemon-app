@@ -36,7 +36,7 @@ const CardLargeItem: React.FC<Params> = ({ content, showButtonDetails }) => {
         <ButtonContainer>
           <Button type="favorite" />
           {showButtonDetails && (
-            <Button type="default" onPress={() => Details()}>
+            <Button marginLeft={12} type="default" onPress={() => Details()}>
               Ver mais
             </Button>
           )}

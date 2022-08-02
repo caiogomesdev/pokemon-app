@@ -10,7 +10,7 @@ interface Params {
 
 const ButtonInfo: React.FC<Params> = ({ onPress }) => {
   return (
-    <Button onPress={() => onPress}>
+    <Button onPress={onPress}>
       <Image source={InfoFill} />
     </Button>
   );

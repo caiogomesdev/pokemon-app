@@ -12,7 +12,7 @@ interface Params {
 
 const ButtonFavorite: React.FC<Params> = ({ isAtived, onPress }) => {
   return (
-    <Button onPress={() => onPress}>
+    <Button onPress={onPress}>
       <Image source={isAtived ? HeartFill : HeartStroke} />
     </Button>
   );
