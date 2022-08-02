@@ -1,9 +1,14 @@
 import React from 'react';
+import { GestureResponderEvent } from 'react-native';
 import { ButtonDefault as Button, Text } from './styles';
 
-const ButtonDefault: React.FC = ({ children }) => {
+interface Params {
+  onPress?: (event: GestureResponderEvent) => void;
+}
+
+const ButtonDefault: React.FC<Params> = ({ children, onPress }) => {
   return (
-    <Button>
+    <Button onPress={onPress}>
       <Text>{children}</Text>
     </Button>
   );
