@@ -10,8 +10,9 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { ThemeProvider } from 'styled-components';
 import { THEME as theme } from './src/theme';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Home from './src/views/home';
+import Routes from './src/routes';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -44,17 +45,20 @@ export default function App() {
     return null;
   }
   return (
-    <ThemeProvider theme={theme}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: theme.COLORS.LIGHT_800,
-          paddingTop: Platform.OS === 'android' ? bar.currentHeight : 0,
-        }}
-      >
-        <Home onLayout={onLayout} />
-      </View>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: theme.COLORS.LIGHT_800,
+            paddingTop: Platform.OS === 'android' ? bar.currentHeight : 0,
+          }}
+          onLayout={onLayout}
+        >
+          <Routes />
+        </View>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
