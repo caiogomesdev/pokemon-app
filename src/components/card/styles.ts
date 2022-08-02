@@ -43,4 +43,29 @@ export const ButtonContainer = styled.View`
   flex-direction: row;
 `;
 
-export const CardItem = styled.View``;
+export const CardItem = styled.View`
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_800};
+  max-width: 157px;
+  padding: 17px 40px;
+  border-radius: 10px;
+  margin: 0px 10px 20px 10px;
+`;
+
+export const TextCardItem = styled.Text`
+  font-size: 10px;
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  color: ${({ theme }) => theme.COLORS.LIGHT_700};
+  margin-top: 9px;
+  margin-right: 20px;
+  text-align: center;
+  width: 100%;
+`;
+
+export const CardButtons = styled.View`
+  padding: 2px 12px;
+  margin-top: 5px;
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_600};
+  border-radius: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+`;
