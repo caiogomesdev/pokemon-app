@@ -4,14 +4,10 @@ import { Container, SafeArea } from './styles';
 import Featured from '../../components/featured';
 import Pokemons from '../../components/pokemons';
 
-interface Params {
-  onLayout: () => void;
-}
-
-const Home: React.FC<Params> = ({ onLayout }) => {
+const Home: React.FC = () => {
   return (
     <SafeArea>
-      <Container onLayout={onLayout}>
+      <Container>
         <Featured />
         <Pokemons />
       </Container>
