@@ -1,38 +1,75 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Image } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
-import Home from '../views/home';
-import Details from '../views/details';
+
+import HomeImg from '../assets/Pokeball-tab.png';
+import FavoritesImg from '../assets/Bookmark-Tab.png';
+
+import HomeStack from './home-stack-route';
+import FavoritesStack from './favorites-stack-route';
 
 export type RootStackParamList = {
   Home: undefined;
+  Favorites: undefined;
   Details: { pokemonId: number };
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tabs = createBottomTabNavigator();
 
 const Routes: React.FC = () => {
   const theme = useTheme();
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={Details}
+    <Tabs.Navigator
+      screenOptions={{
+        tabBarLabelStyle: {
+          color: `${theme.COLORS.LIGHT_700}`,
+          margin: 0,
+        },
+        tabBarStyle: {
+          alignSelf: 'center',
+          bottom: 16,
+          right: 20,
+          width: 231,
+          height: 54,
+          padding: 0,
+          borderRadius: 9,
+          paddingBottom: 5,
+          borderTopWidth: 0,
+          backgroundColor: `${theme.COLORS.PRIMARY_800}`,
+        },
+        tabBarItemStyle: {},
+      }}
+    >
+      <Tabs.Screen
+        name="HomeStack"
+        component={HomeStack}
         options={{
+          title: 'Home',
           headerShown: false,
-          headerBackTitle: '',
-          headerTintColor: `${theme.COLORS.PRIMARY_900}`,
-          headerStyle: {
-            backgroundColor: `${theme.COLORS.LIGHT_800}`,
-          },
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={HomeImg}
+              style={{ width: 26, height: 26, opacity: focused ? 1 : 0.6 }}
+            />
+          ),
         }}
       />
-    </Stack.Navigator>
+      <Tabs.Screen
+        name="FavoritesStack"
+        component={FavoritesStack}
+        options={{
+          title: 'Favorites',
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={FavoritesImg}
+              style={{ width: 21, height: 21, opacity: focused ? 1 : 0.6 }}
+            />
+          ),
+        }}
+      />
+    </Tabs.Navigator>
   );
 };
 
