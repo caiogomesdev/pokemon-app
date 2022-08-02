@@ -8,6 +8,8 @@ import {
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto';
 import * as SplashScreen from 'expo-splash-screen';
+import { ThemeProvider } from 'styled-components';
+import { THEME as theme } from './src/theme';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -40,10 +42,12 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView style={styles.container} onLayout={onLayout}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView style={styles.container} onLayout={onLayout}>
+        <Text>Open up App.tsx to start working on your app!</Text>
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
