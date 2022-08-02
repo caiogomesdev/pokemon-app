@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Platform, View, StatusBar as bar } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import {
@@ -45,7 +45,15 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <Home onLayout={onLayout} />
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: theme.COLORS.LIGHT_800,
+          paddingTop: Platform.OS === 'android' ? bar.currentHeight : 0,
+        }}
+      >
+        <Home onLayout={onLayout} />
+      </View>
       <StatusBar style="auto" />
     </ThemeProvider>
   );

@@ -21,6 +21,41 @@ const Pokemons: React.FC = () => {
       image:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
     },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
+    {
+      title: 'Pokemon',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    },
   ]);
 
   return (
@@ -30,7 +65,6 @@ const Pokemons: React.FC = () => {
         style={{ flexDirection: 'row' }}
         numColumns={2}
         contentContainerStyle={{
-          justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
         }}

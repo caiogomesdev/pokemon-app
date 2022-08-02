@@ -38,7 +38,7 @@ export const ButtonContainer = styled.View`
   margin-top: 10px;
   align-items: center;
   justify-content: space-between;
-  width: 45%;
+  width: 53%;
   align-self: flex-end;
   flex-direction: row;
 `;
