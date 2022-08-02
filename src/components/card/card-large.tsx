@@ -1,6 +1,14 @@
 import React from 'react';
 import { CardContent } from './interfaces';
-import { CardLarge as Card, Description, Title, Image, Column } from './styles';
+import {
+  CardLarge as Card,
+  Description,
+  Title,
+  Image,
+  Column,
+  ButtonContainer,
+} from './styles';
+import Button from '../button';
 
 interface Params {
   content: CardContent;
@@ -13,6 +21,10 @@ const CardLarge: React.FC<Params> = ({ content }) => {
       <Column>
         <Title>{content.title}</Title>
         <Description>{content.description}</Description>
+        <ButtonContainer>
+          <Button type="favorite" />
+          <Button type="default">Ver mais</Button>
+        </ButtonContainer>
       </Column>
     </Card>
   );

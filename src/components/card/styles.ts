@@ -7,7 +7,6 @@ export const CardLarge = styled.View`
   width: 100%;
   height: 132px;
   padding: 20px 39px;
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -33,6 +32,15 @@ export const Image = styled.Image`
 
 export const Column = styled.View`
   width: 60%;
+`;
+
+export const ButtonContainer = styled.View`
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+  align-self: flex-end;
+  flex-direction: row;
 `;
 
 export const CardItem = styled.View``;
