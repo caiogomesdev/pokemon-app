@@ -7,13 +7,24 @@ import ButtonInfo from './button-info';
 interface Params {
   type: 'default' | 'favorite' | 'info';
   isAtived?: boolean;
+  marginLeft?: number;
   onPress?: (event: GestureResponderEvent) => void;
 }
 
-const Button: React.FC<Params> = ({ type, children, isAtived, onPress }) => {
+const Button: React.FC<Params> = ({
+  type,
+  children,
+  isAtived,
+  onPress,
+  marginLeft = 0,
+}) => {
   function getButton(): JSX.Element {
     const buttonTypes = {
-      default: <ButtonDefault onPress={onPress}>{children}</ButtonDefault>,
+      default: (
+        <ButtonDefault marginLeft={marginLeft} onPress={onPress}>
+          {children}
+        </ButtonDefault>
+      ),
       favorite: <ButtonFavorite isAtived={isAtived} onPress={onPress} />,
       info: <ButtonInfo onPress={onPress} />,
     };

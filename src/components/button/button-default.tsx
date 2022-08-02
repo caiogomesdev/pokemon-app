@@ -4,11 +4,12 @@ import { ButtonDefault as Button, Text } from './styles';
 
 interface Params {
   onPress?: (event: GestureResponderEvent) => void;
+  marginLeft: number;
 }
 
-const ButtonDefault: React.FC<Params> = ({ children, onPress }) => {
+const ButtonDefault: React.FC<Params> = ({ children, onPress, marginLeft }) => {
   return (
-    <Button onPress={onPress}>
+    <Button style={{ marginLeft }} onPress={onPress}>
       <Text>{children}</Text>
     </Button>
   );
