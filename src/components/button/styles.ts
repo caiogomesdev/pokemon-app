@@ -12,3 +12,7 @@ export const Text = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
   color: ${({ theme }) => theme.COLORS.LIGHT_800};
 `;
+
+export const ButtonFavorite = styled.TouchableOpacity``;
+
+export const Image = styled.Image``;
