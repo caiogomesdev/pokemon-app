@@ -1,6 +1,6 @@
 export const THEME = {
   COLORS: {
-    PRIMARY_900: '#040C19',
+    PRIMARY_900: '#091733',
     PRIMARY_800: '#0E1F40',
     PRIMARY_700: '#162645',
     PRIMARY_600: '#263C66',
