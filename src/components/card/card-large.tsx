@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { CardContent } from './interfaces';
 import {
   CardLarge as Card,
@@ -15,6 +16,11 @@ interface Params {
 }
 
 const CardLarge: React.FC<Params> = ({ content }) => {
+  const navigation = useNavigation();
+
+  function Details() {
+    navigation.navigate('Details', { pokemonId: content.id });
+  }
   return (
     <Card>
       <Image source={{ uri: content.image }} />
@@ -23,7 +29,9 @@ const CardLarge: React.FC<Params> = ({ content }) => {
         <Description>{content.description}</Description>
         <ButtonContainer>
           <Button type="favorite" />
-          <Button type="default">Ver mais</Button>
+          <Button marginLeft={12} type="default" onPress={() => Details()}>
+            Ver mais
+          </Button>
         </ButtonContainer>
       </Column>
     </Card>

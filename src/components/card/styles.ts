@@ -37,7 +37,7 @@ export const Column = styled.View`
 export const ButtonContainer = styled.View`
   margin-top: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 53%;
   align-self: flex-end;
   flex-direction: row;
@@ -68,4 +68,11 @@ export const CardButtons = styled.View`
   border-radius: 15px;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const VerticalLine = styled.View`
+  padding-right: 16px;
+  border-right-width: 1px;
+  border-right-color: ${({ theme }) => theme.COLORS.LIGHT_800};
+  margin-right: 20px;
 `;
