@@ -48,7 +48,7 @@ export const CardItem = styled.View`
   max-width: 157px;
   padding: 17px 40px;
   border-radius: 10px;
-  margin: 0px 10px 20px 10px;
+  margin-bottom: 20px;
 `;
 
 export const TextCardItem = styled.Text`
