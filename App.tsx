@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import {
@@ -10,6 +10,8 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { ThemeProvider } from 'styled-components';
 import { THEME as theme } from './src/theme';
+
+import Home from './src/views/home';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -43,19 +45,8 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView style={styles.container} onLayout={onLayout}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </SafeAreaView>
+      <Home onLayout={onLayout} />
+      <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
