@@ -12,6 +12,7 @@ import { ThemeProvider } from 'styled-components';
 import { THEME as theme } from './src/theme';
 import { NavigationContainer } from '@react-navigation/native';
 
+import AppProvider from './src/hooks/app-provider';
 import Routes from './src/routes';
 
 export default function App() {
@@ -46,19 +47,21 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <ThemeProvider theme={theme}>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: theme.COLORS.LIGHT_800,
-            paddingTop: Platform.OS === 'android' ? bar.currentHeight : 0,
-          }}
-          onLayout={onLayout}
-        >
-          <Routes />
-        </View>
-        <StatusBar style="auto" />
-      </ThemeProvider>
+      <AppProvider>
+        <ThemeProvider theme={theme}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: theme.COLORS.LIGHT_800,
+              paddingTop: Platform.OS === 'android' ? bar.currentHeight : 0,
+            }}
+            onLayout={onLayout}
+          >
+            <Routes />
+          </View>
+          <StatusBar style="auto" />
+        </ThemeProvider>
+      </AppProvider>
     </NavigationContainer>
   );
 }
