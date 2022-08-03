@@ -16,7 +16,7 @@ const CardItem: React.FC<Params> = ({ content }) => {
   }
   function details() {
     navigation.navigate('Details', {
-      pokemonId: 1,
+      pokemonId: content.id,
     });
   }
   return (
@@ -24,7 +24,11 @@ const CardItem: React.FC<Params> = ({ content }) => {
       <Image source={{ uri: content.image }} />
       <TextCardItem>{content.name}</TextCardItem>
       <CardButtons>
-        <Button type="favorite" onPress={() => addFavorite} />
+        <Button
+          type="favorite"
+          onPress={() => addFavorite}
+          isAtived={content.isFavorite}
+        />
         <Button type="info" onPress={() => details()} />
       </CardButtons>
     </Card>
