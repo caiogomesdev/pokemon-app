@@ -5,6 +5,7 @@ import { CardContent } from '../card/interfaces';
 
 const Featured: React.FC = () => {
   const [content, setContent] = useState<CardContent>({
+    id: 1,
     title: 'Pikachu',
     description:
       'Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun...',

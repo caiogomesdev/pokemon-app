@@ -15,5 +15,5 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
   color: ${({ theme }) => theme.COLORS.PRIMARY_900};
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;

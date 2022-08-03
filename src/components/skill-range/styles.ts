@@ -18,7 +18,7 @@ export const Text = styled.Text`
 
 export const RangeBackground = styled.View`
   background-color: ${({ theme }) => theme.COLORS.PRIMARY_900};
-  height: 11;
+  height: 11px;
   width: 50%;
 `;
 
