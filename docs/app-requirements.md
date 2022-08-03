@@ -1,6 +1,6 @@
 ## Requisitos aplicativo
 
-1. O aplicativo de listar todos os pokemons
+1. O aplicativo deve listar todos os pokemons
 2. A lista deve ter paginação
 3. A lista deve ter opção de detalhes
 4. A lista deve ter opção de adicionar aos favoritos
