@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
-
+import { AppContext } from '../hooks/app-provider';
 import HomeImg from '../assets/Pokeball-tab.png';
 import FavoritesImg from '../assets/Bookmark-Tab.png';
 
 import HomeStack from './home-stack-route';
 import FavoritesStack from './favorites-stack-route';
+import Loading from '../components/loading';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -19,7 +20,10 @@ const Tabs = createBottomTabNavigator();
 
 const Routes: React.FC = () => {
   const theme = useTheme();
-  return (
+  const context = useContext(AppContext);
+  return context?.isLoading ? (
+    <Loading />
+  ) : (
     <Tabs.Navigator
       screenOptions={{
         tabBarLabelStyle: {
