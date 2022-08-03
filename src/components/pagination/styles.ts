@@ -7,9 +7,13 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const Button = styled.TouchableOpacity``;
+export const Button = styled.TouchableOpacity`
+  padding: 5px;
+`;
 
-export const None = styled.View``;
+export const None = styled.View`
+  padding: 5px;
+`;
 
 export const TextCount = styled.Text`
   font-size: 12px;
