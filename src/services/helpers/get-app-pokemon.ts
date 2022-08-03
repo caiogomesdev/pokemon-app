@@ -1,3 +1,4 @@
+import { favoriteService } from '../favorite-service';
 import { httpClient } from '../http-client';
 import {
   ApiPokemon,
@@ -23,6 +24,5 @@ export const getAppPokemon = async (item: ApiResult): Promise<AppPokemon> => {
       skill: stat.stat.name,
       range: stat.base_stat,
     })),
-    isFavorite: false,
   };
 };

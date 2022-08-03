@@ -26,11 +26,12 @@ const Details: React.FC<Params> = ({ route }) => {
   });
 
   function init() {
-    const validations = [checkPokemonList(), checkFeatured()];
+    const validations = [checkPokemonList, checkFeatured, checkFavorites];
 
     for (const contentValid of validations) {
-      if (contentValid) {
-        sucessContent(contentValid);
+      const value = contentValid();
+      if (value) {
+        sucessContent(value);
         break;
       }
     }
@@ -61,6 +62,16 @@ const Details: React.FC<Params> = ({ route }) => {
   function checkFeatured() {
     if (context?.featured?.id === pokemonId) {
       return context?.featured;
+    }
+    return null;
+  }
+
+  function checkFavorites() {
+    const value = context?.favorites.getAll.find(
+      (item) => item.id === pokemonId
+    );
+    if (value) {
+      return value;
     }
     return null;
   }

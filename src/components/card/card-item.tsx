@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { CardButtons, CardItem as Card, Image, TextCardItem } from './styles';
 import Button from '../button';
 import { AppPokemon } from '../../services/models';
+import { AppContext } from '../../hooks/app-provider';
 
 interface Params {
   content: AppPokemon;
@@ -10,10 +11,21 @@ interface Params {
 
 const CardItem: React.FC<Params> = ({ content }) => {
   const navigation = useNavigation();
+  const context = useContext(AppContext);
+  const [favorite, setFavorite] = useState(false);
 
-  function addFavorite() {
-    console.log('Favorite');
+  useEffect(() => {
+    setFavorite(!!context?.favorites.hasItem(content));
+    navigation.addListener('focus', () => {
+      setFavorite(!!context?.favorites.hasItem(content));
+    });
+  }, []);
+
+  async function addFavorite() {
+    await context?.favorites.handleButtonFavorite(content);
+    setFavorite(!!context?.favorites.hasItem(content));
   }
+
   function details() {
     navigation.navigate('Details', {
       pokemonId: content.id,
@@ -26,8 +38,8 @@ const CardItem: React.FC<Params> = ({ content }) => {
       <CardButtons>
         <Button
           type="favorite"
-          onPress={() => addFavorite}
-          isAtived={content.isFavorite}
+          onPress={() => addFavorite()}
+          isAtived={favorite}
         />
         <Button type="info" onPress={() => details()} />
       </CardButtons>

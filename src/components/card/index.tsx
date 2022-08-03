@@ -9,16 +9,18 @@ interface Params {
   type: 'large' | 'large-item' | 'item';
   content: AppPokemon;
   showButtonDetails?: boolean;
+  removeCard?: boolean;
 }
 
 const Card: React.FC<Params> = ({
   type,
   content,
   showButtonDetails = false,
+  removeCard = false,
 }) => {
   function getCard() {
     const cardType = {
-      large: <CardLarge content={content} />,
+      large: <CardLarge content={content} removeCard={removeCard} />,
       'large-item': (
         <CardLargeItem
           showButtonDetails={showButtonDetails}
