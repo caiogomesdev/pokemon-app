@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { CardContent } from './interfaces';
 import {
   CardLarge as Card,
   Description,
@@ -10,9 +9,10 @@ import {
   ButtonContainer,
 } from './styles';
 import Button from '../button';
+import { AppPokemon } from '../../services/models';
 
 interface Params {
-  content: CardContent;
+  content: AppPokemon;
 }
 
 const CardLarge: React.FC<Params> = ({ content }) => {
@@ -25,7 +25,7 @@ const CardLarge: React.FC<Params> = ({ content }) => {
     <Card>
       <Image source={{ uri: content.image }} />
       <Column>
-        <Title>{content.title}</Title>
+        <Title>{content.name}</Title>
         <Description>{content.description}</Description>
         <ButtonContainer>
           <Button type="favorite" />

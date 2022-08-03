@@ -8,18 +8,11 @@ interface Params {
 }
 
 const Favorites: React.FC<Params> = () => {
-  const favorites: CardContent = {
-    id: 1,
-    image:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-    title: 'adasdds',
-    description: 'qweqweqw eqwqeqweqwewqqweqeqdas as asdsaad asd adsadczxxzcsc',
-  };
   return (
     <SafeArea>
       <Container>
         <Title>Favoritos</Title>
-        <Card type="large" showButtonDetails={true} content={favorites} />
+        {/* <Card type="large" showButtonDetails={true} content={favorites} /> */}
       </Container>
     </SafeArea>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { CardContent } from './interfaces';
 import {
   CardLarge as Card,
   Description,
@@ -11,9 +10,10 @@ import {
   VerticalLine,
 } from './styles';
 import Button from '../button';
+import { AppPokemon } from '../../services/models';
 
 interface Params {
-  content: CardContent;
+  content: AppPokemon;
   showButtonDetails: boolean;
 }
 
@@ -29,7 +29,7 @@ const CardLargeItem: React.FC<Params> = ({ content, showButtonDetails }) => {
         <Image source={{ uri: content.image }} />
       </VerticalLine>
       <Column>
-        <Title style={{ paddingLeft: 20 }}>{content.title}</Title>
+        <Title style={{ paddingLeft: 20 }}>{content.name}</Title>
         <Description style={{ paddingLeft: 20 }}>
           {content.description}
         </Description>

@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Container, Title } from './styles';
 import Card from '../card';
-import { CardContent } from '../card/interfaces';
+import { AppContext } from '../../hooks/app-provider';
+import Loading from '../loading';
 
 const Featured: React.FC = () => {
-  const [content, setContent] = useState<CardContent>({
-    id: 1,
-    title: 'Pikachu',
-    description:
-      'Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun Loren ipsun...',
-    image:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-  });
+  const context = useContext(AppContext);
 
-  return (
+  return context?.featured ? (
     <Container>
       <Title>Destaque</Title>
-      <Card type="large" content={content} />
+      <Card
+        type="large"
+        content={{
+          id: context.featured.id,
+          title: context.featured.name,
+          image: context.featured.image,
+          description: context.featured.description,
+        }}
+      />
     </Container>
+  ) : (
+    <Loading />
   );
 };
 

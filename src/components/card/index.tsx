@@ -1,13 +1,13 @@
 import React from 'react';
-import { CardContent } from './interfaces';
 
 import CardLarge from './card-large';
 import CardLargeItem from './card-large-item';
 import CardItem from './card-item';
+import { AppPokemon } from '../../services/models';
 
 interface Params {
   type: 'large' | 'large-item' | 'item';
-  content: CardContent;
+  content: AppPokemon;
   showButtonDetails?: boolean;
 }
 

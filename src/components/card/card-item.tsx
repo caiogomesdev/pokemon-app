@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { CardContent } from './interfaces';
 import { CardButtons, CardItem as Card, Image, TextCardItem } from './styles';
 import Button from '../button';
+import { AppPokemon } from '../../services/models';
 
 interface Params {
-  content: CardContent;
+  content: AppPokemon;
 }
 
 const CardItem: React.FC<Params> = ({ content }) => {
@@ -22,7 +22,7 @@ const CardItem: React.FC<Params> = ({ content }) => {
   return (
     <Card>
       <Image source={{ uri: content.image }} />
-      <TextCardItem>{content.title}</TextCardItem>
+      <TextCardItem>{content.name}</TextCardItem>
       <CardButtons>
         <Button type="favorite" onPress={() => addFavorite} />
         <Button type="info" onPress={() => details()} />
