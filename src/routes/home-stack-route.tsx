@@ -21,7 +21,6 @@ const HomeStackRoute: React.FC = () => {
         name="Details"
         component={Details}
         options={{
-          headerShown: false,
           headerBackTitle: '',
           headerTintColor: `${theme.COLORS.PRIMARY_900}`,
           headerStyle: {
