@@ -5,6 +5,7 @@ export interface AppPokemon {
   image: string;
   abilities: string[];
   stats: Stats[];
+  isFavorite: boolean;
 }
 
 interface Stats {

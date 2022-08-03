@@ -15,11 +15,14 @@ export const getAppPokemon = async (item: ApiResult): Promise<AppPokemon> => {
     id: pokemon.id,
     name: pokemon.name,
     abilities: pokemon.abilities.map((skill) => skill.ability.name),
-    description: species.flavor_text_entries[9].flavor_text,
+    description:
+      species.flavor_text_entries.find((spec) => spec.language.name === 'en')
+        ?.flavor_text ?? '',
     image: pokemon.sprites.other['official-artwork'].front_default,
     stats: pokemon.stats.map((stat) => ({
       skill: stat.stat.name,
       range: stat.base_stat,
     })),
+    isFavorite: false,
   };
 };

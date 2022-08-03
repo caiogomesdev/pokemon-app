@@ -29,6 +29,9 @@ interface Stats {
 
 interface FlavorTextEntries {
   flavor_text: string;
+  language: {
+    name: string;
+  };
 }
 
 interface Species {
