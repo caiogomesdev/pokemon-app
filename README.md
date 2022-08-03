@@ -6,7 +6,7 @@
 Visualize e favorite seus pokemons favoritos em apenas poucos toques. <br />
 [Guia de estilos e protótipo](https://www.figma.com/file/qvFkU9zdDZ9479GTH0zD0W/Pokemo) |
 [Requisitos](docs/app-requirements.md) |
-[api](https://pokeapi.co/api/v2/pokemon)
+[Api](https://pokeapi.co/api/v2/pokemon)
 
 ## Get started
 
