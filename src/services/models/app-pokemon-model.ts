@@ -8,7 +8,7 @@ export interface AppPokemon {
   isFavorite: boolean;
 }
 
-interface Stats {
+export interface Stats {
   skill: string;
   range: number;
 }
