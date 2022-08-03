@@ -4,7 +4,7 @@
 
 ## Pokemon app
 Visualize e favorite seus pokemons favoritos em apenas poucos toques. <br />
-[Guia de estilos e protótipo](https://www.figma.com/file/qvFkU9zdDZ9479GTH0zD0W/Pokemo) |
+[Guia de estilos e protótipo](https://www.figma.com/file/4oI4ebYmr8Wboj9QAd69G7/Pokemon-App) |
 [Requisitos](docs/app-requirements.md) |
 [Api](https://pokeapi.co/api/v2/pokemon)
 
