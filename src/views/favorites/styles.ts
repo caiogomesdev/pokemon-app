@@ -15,3 +15,10 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.REGULAR};
   color: ${({ theme }) => theme.COLORS.PRIMARY_900};
 `;
+
+export const TextMessage = styled.Text`
+  margin-top: 20px;
+  color: ${({ theme }) => theme.COLORS.PRIMARY_900};
+  text-align: center;
+  padding-bottom: 70px;
+`;

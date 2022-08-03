@@ -10,15 +10,7 @@ const Featured: React.FC = () => {
   return context?.featured ? (
     <Container>
       <Title>Destaque</Title>
-      <Card
-        type="large"
-        content={{
-          id: context.featured.id,
-          title: context.featured.name,
-          image: context.featured.image,
-          description: context.featured.description,
-        }}
-      />
+      <Card type="large" content={context.featured} />
     </Container>
   ) : (
     <Loading />
