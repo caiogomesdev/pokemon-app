@@ -29,7 +29,6 @@ const CardLarge: React.FC<Params> = ({ content, removeCard }) => {
   }, []);
 
   async function addFavorite() {
-    console.log(removeCard);
     await context?.favorites.handleButtonFavorite(content);
     if (removeCard) {
       return;
