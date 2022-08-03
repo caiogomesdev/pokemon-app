@@ -24,6 +24,6 @@ export const RangeBackground = styled.View`
 
 export const RangeForeground = styled.View<ForegroundParams>`
   background-color: ${({ theme }) => theme.COLORS.SECONDARY_700};
-  width: ${(props) => props.range}%;
+  width: ${(props) => (props.range > 100 ? 100 : props.range)}%;
   height: 100%;
 `;
